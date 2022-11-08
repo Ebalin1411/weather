@@ -24,33 +24,33 @@ export const TempPHW =({data}:Props) => {
                      <img src={`https://openweathermap.org/img/w/${data.icon}.png`}  alt='How is weather like' /> 
                 </div>
                
-                <div className='flex text-2xl'>
+                <div className='flex gap-1 text-2xl'>
                          <div className={weatherUnit === 1 ? "block" : "hidden"}>                           
                             
-                         <span className='text-5xl font-bold'>{data.temperature}</span>
+                         <span className='text-6xl font-bold'>{data.temperature}</span>
                         </div>
                         <div className={weatherUnit === 2 ? "block" : "hidden"}>
-                            <span className='text-5xl font-bold'>{tempInFahrenheit}</span>
+                            <span className='text-6xl font-bold'>{tempInFahrenheit}</span>
                         </div>
                     <div>
                          
                     </div>
-                    <div className='flex'>
+                    <div className='flex gap-1'>
                         <ul>
                             <li>                               
-                                <a  href="#" className="inline-block" onClick={() => setWeatherUnit(1)}>
+                                <div   className="inline-block cursor-pointer" onClick={() => setWeatherUnit(1)}>
                                    
                                     C°
-                                </a>
+                                </div>
                                 
                             </li>
                         </ul>
                         <ul>
                             <li>                               
-                                 <a href="#" className="inline-block" onClick={() => setWeatherUnit(2)}>
+                                 <div  className="inline-block cursor-pointer" onClick={() => setWeatherUnit(2)}>
                                 
                                     F°
-                                </a>                                
+                                </div>                                
                             </li>
                         </ul>                     
                        
