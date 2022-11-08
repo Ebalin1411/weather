@@ -12,7 +12,7 @@ export interface WeatherDayDetail{
     phwData: PHWDataType,
     dayForecastData:DayForecastDataType,
     locTime:LocationSummaryType,
-    //tempChartData:TempChartDataType
+  
   }
 
 export const getWeatherDetails=async(location:string)=>{
@@ -23,7 +23,7 @@ export const getWeatherDetails=async(location:string)=>{
         //Restructure the forecast data to a key value object
       const weekForecastObj=  resp.data.list.reduce(
         (acc:any,weatherItem:any)=>{         
-          console.log('Weather Item',weatherItem)
+         
               const currentWeather: WeatherDayDetail  = {
 
                       phwData:{
@@ -62,7 +62,9 @@ export const getWeatherDetails=async(location:string)=>{
                       }
                           console.log('weekForecast Data::',day)
                           return acc
-                  },{})
+                  },
+                  
+                  {})  // reduce function's acc intial value empty object
                 
                
                    console.log('weekForecast Data::',weekForecastObj)
