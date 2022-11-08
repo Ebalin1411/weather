@@ -45,7 +45,7 @@ export interface TempChartDataType{
       
     }
    return (
-    <div className='text-white box-border h-80   p-4 m-8 border-2'>
+    <div className='text-white box-border h-80   p-4 m-4 border-2'>
         <h1>Temperature Chart</h1>
         <Line 
          height={100}

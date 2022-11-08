@@ -1,6 +1,6 @@
 {
   "name": "weather",
-  "home": "https://github.com/Ebalin1411/weather/",
+  "homepage": "https://github.com/Ebalin1411/weather/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
