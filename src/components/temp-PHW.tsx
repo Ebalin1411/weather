@@ -53,7 +53,7 @@ export const TempPHW =({data}:Props) => {
                                 </li>
                             </ul>                     
                         
-                        </div>                 
+                        </div>                   
 
                     </div>
                 <div className='flex-col'>

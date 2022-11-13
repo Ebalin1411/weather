@@ -20,14 +20,22 @@ function App() {
   const [weatherRecords,setWeatherInfo] =useState<WeatherDayDetail>(); 
   const [weekForecastData,setWeekForecastData]=useState<Record<string,any>>();  
   
-  const  getWeatherRecords = async()=>{           
+  const  getWeatherRecords = async()=>{   
+        try{
+
+             
               const postUrl =await  getWeatherDetails(locationName).then(
-                (weatherInfo)=>{                  
+                (weatherInfo:any)=>{                  
                     const currentDay = dayjs().format('ddd');
                     setWeatherInfo(weatherInfo.weekForecastObj[currentDay][0]);              
                     setWeekForecastData(weatherInfo.weekForecastObj) 
                    
                   });
+                }catch(error){
+                  console.log(error)
+                  alert('Weather Record Not Found')
+                  window.location.reload();
+                }
 
                }
 
@@ -42,9 +50,7 @@ function App() {
         
         }
         
-        // console.log('Clicked day weather detail count',chartYaxisData)
-        // console.log('Clicked day weather detail count',weekForecastData)
-        // console.log('Clicked day weather detail',weekForecastData[dayName][0].phwData.temperature)             
+       
       }
      
     };

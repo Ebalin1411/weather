@@ -16,6 +16,9 @@ export interface WeatherDayDetail{
   }
 
 export const getWeatherDetails=async(location:string)=>{
+  try{
+
+ 
    const baseUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${APIKey}&units=metric`
    return await  axios.post(baseUrl).then(resp=>{
       const locationDetails = resp.data.city //To get City details       
@@ -76,5 +79,15 @@ export const getWeatherDetails=async(location:string)=>{
       } 
     
   });
+}catch (error){
+  let errMsg;
+  if(axios.isAxiosError(error) && error.response){
+    errMsg=error.response.data.message;
+  }else{
+    errMsg = String(error);
+    console.log(errMsg)
+    alert(errMsg)
+  }
+}
  
 };
