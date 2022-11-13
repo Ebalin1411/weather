@@ -35,6 +35,7 @@ function App() {
                   console.log(error)
                   alert('Weather Record Not Found')
                   window.location.reload();
+                
                 }
 
                }
@@ -109,11 +110,12 @@ function App() {
              {/* Chart Section  */}
              
               <div>
-                    
+              {weatherRecords &&(
                      <TabTPW tempChartData={{
                             dayTime:timeForChartData,
                             dayTemperature:temparatureForChartData,
-                     }} />   
+                     }} />  
+              )} 
               </div>  
             {/* Day Forecast bottom div */}
              
